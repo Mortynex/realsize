@@ -37,3 +37,26 @@ ppiInput.addEventListener("input", () => {
 
     sizeChange();
 })
+
+import interact from 
+'https://cdn.interactjs.io/v1.10.11/interactjs/index.js'
+
+const position = { x: 0, y: 0 }
+
+interact('.draggable').draggable({
+    modifiers: [
+        interact.modifiers.restrictRect({
+          restriction: 'parent',
+        })
+      ],
+    autoScroll: true,
+    inertia: true,
+    listeners: {
+    move ({dx, dy, target}) {
+        position.x += dx
+        position.y += dy
+
+      target.style.transform =
+        `translate(${position.x}px, ${position.y}px)`
+  }}
+})

@@ -1,10 +1,17 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
+   
+}
+body, html {
+    margin:0;
+    width: 100%;
+    height: 100%;
 }
 #settings {
     position: absolute;
     background: rgb(233, 233, 233);
     padding: 0.5em;
+    z-index: 999;
 }
 .valueContainer{
     display: flex;
@@ -19,4 +26,6 @@
     transform: translate(-50%, -50%);
     width: 5em;
     height: 5em;
+    touch-action: none;
+  user-select: none;
 }
